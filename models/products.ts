@@ -18,6 +18,14 @@ const products = {
             method: 'PUT'
         });
     },
+
+    getSpecificProduct: async function getSpecificProduct(id) {
+        const response = await fetch(`${config.base_url}/products/${id}?api_key=${config.api_key}`);
+        const result = await response.json();
+
+        return result.data;
+
+    }
 };
 
 export default products;

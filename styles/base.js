@@ -24,5 +24,16 @@ export const ordrar = {
     paddingRight: 12
 };
 
+export const base = {
+    flex: 1,
+    padding: 12,
+    lineHeight: 1.4,
+    color: '#333',
+};
 
-//backgroundColor: '#a7ccdb'
+export const delivery = {
+    height: 100,
+    borderStyle: 'solid',
+    borderColor: "#ccc",
+    borderWidth: 1
+};

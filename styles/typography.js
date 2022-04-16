@@ -30,3 +30,19 @@ export const alert = {
     marginBottom: 15,
     color: '#FF0000',
 };
+
+export const leverans = {
+    fontSize: 26,
+    marginBottom: 15,
+    color: '#333',
+};
+
+export const label = {
+    fontWeight: 'bold',
+    marginLeft: 2,
+    marginRight: 0,
+    marginTop: 0,
+    marginBottom: 0,
+    fontSize: 15,
+    color: '#333',
+};
