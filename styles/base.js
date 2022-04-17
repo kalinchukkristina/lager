@@ -29,6 +29,7 @@ export const base = {
     padding: 12,
     lineHeight: 1.4,
     color: '#333',
+    marginBottom: 30,
 };
 
 export const delivery = {

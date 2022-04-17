@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-import { View, Text, Button } from "react-native";
+import { ScrollView, View, Text, Button } from "react-native";
 import { Base, Typography } from '../styles';
 import deliveryModel from '../models/deliveries';
 
@@ -37,7 +37,7 @@ export default function DeliveriesList({ route, navigation }) {
     });
 
     return (
-        <View style={Base.base}>
+        <ScrollView style={Base.base}>
             <Text style={Typography.header2}>Inleveranser</Text>
             { listOfDeliveries }
             <Button
@@ -46,6 +46,6 @@ export default function DeliveriesList({ route, navigation }) {
                     navigation.navigate('Form');
                 }}
             />
-        </View>
+        </ScrollView>
     );
 }

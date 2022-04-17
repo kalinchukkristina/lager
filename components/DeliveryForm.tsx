@@ -47,7 +47,7 @@ export default function DeliveryForm({ navigation, setProducts }) {
                     setDelivery({ ...delivery, amount: numericValue})
                 }}
 
-                value={delivery.amount.toString()}
+                value={delivery?.amount?.toString()}
                 keyboardType="numeric"
             />
 
