@@ -11,6 +11,13 @@ const orders = {
         return result.data;
     },
 
+    getOrder: async function getOrder(id): Promise<Order[]> {
+        const response = await fetch(`${config.base_url}/orders/${id}?api_key=${config.api_key}`);
+        const result = await response.json();
+
+        return result.data;
+    },
+
     pickOrder: async function pickOrder(order: Partial<Order>) {
         await Promise.all(order.order_items.map(async (order_item:
             Partial<OrderItem>) => {
@@ -42,6 +49,17 @@ const orders = {
             },
             method: 'PUT'
         });
+    },
+
+    getTotalSum: async function getTotalSum(id) {
+        let sum = 0;
+        const order = await this.getOrder(id);
+        for ( let i=0; i<order.order_items.length; i++) {
+            let order_sum = order.order_items[i].amount * order.order_items[i].price;
+            sum += order_sum;
+        };
+
+        return sum;
     }
 };
 

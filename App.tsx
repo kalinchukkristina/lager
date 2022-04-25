@@ -56,7 +56,7 @@ export default function App() {
               {() => <Deliveries setProducts={setProducts} /> }
               </Tab.Screen>
               {isLoggedIn ?
-                <Tab.Screen name="Faktura" >
+                <Tab.Screen name="Faktura">
                   {() => <Invoices setIsLoggedIn={setIsLoggedIn} />}
                 </Tab.Screen> :
                 <Tab.Screen name="Logga in">

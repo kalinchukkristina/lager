@@ -22,7 +22,7 @@ export default function DateDropDown(props) {
 
                         props.setInvoice({
                             ...props.invoice,
-                            delivery_date: date.toLocaleDateString('se-SV'),
+                            creation_date: date.toLocaleDateString('se-SV'),
                         });
 
                         setShow(false);

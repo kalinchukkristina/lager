@@ -7,7 +7,7 @@ import invoiceModel from '../../models/invoices';
 import storage from "../../models/storage";
 
 export default function InvoicesList({ route, navigation, setIsLoggedIn }) {
-    const { reload } = route.paras || false;
+    const { reload } = route.params || false;
     const [allInvoices, setAllInvoices] = useState([]);
 
     if (reload) {
@@ -26,8 +26,6 @@ export default function InvoicesList({ route, navigation, setIsLoggedIn }) {
     useEffect(() => {
         reloadInvoices();
     }, []);
-
-    console.log(allInvoices);
 
     const listOfInvoices = allInvoices.map((invoice, index) => {
         return (
@@ -50,7 +48,6 @@ export default function InvoicesList({ route, navigation, setIsLoggedIn }) {
                 </DataTable.Header>
                 {listOfInvoices}
             </DataTable>
-            { listOfInvoices }
             <Button
                 title="Lägga till en faktura"
                 onPress={() => {

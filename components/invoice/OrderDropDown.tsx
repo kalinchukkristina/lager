@@ -9,7 +9,9 @@ function OrderDropDown(props) {
     let orderHash: any = {};
 
     useEffect(async () => {
-        setOrder(await orderModel.getOrders());
+        let allOrders = await orderModel.getOrders();
+        let filtered = allOrders.filter(order => order.status === "Packad");
+        setOrder(filtered);
     }, []);
 
     const orderList = orders.map((order, index) => {
@@ -19,9 +21,11 @@ function OrderDropDown(props) {
 
     return (
         <Picker
-        selectedValue={props.invoice?.id}
+        selectedValue={props.invoice?.order_id}
         onValueChange={(itemValue) => {
-            props.setInvoice({ ...props.invoice, order_id: itemValue });
+            props.setInvoice({
+                ...props.invoice, order_id: itemValue
+            })
         }}>
         {orderList}
         </Picker>
