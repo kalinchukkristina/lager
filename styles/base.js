@@ -38,3 +38,11 @@ export const delivery = {
     borderColor: "#ccc",
     borderWidth: 1
 };
+
+export const listItem = {
+    backgroundColor: '#f9c2ff',
+    padding: 20,
+    marginVertical: 8,
+    marginHorizontal: 16,
+};
+

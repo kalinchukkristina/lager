@@ -5,6 +5,7 @@ import Pick from "./components/Pick";
 import Deliveries from "./components/Deliveries";
 import Auth from "./components/auth/Auth";
 import Invoices from "./components/invoice/Invoices";
+import Ship from './components/ship/Ship';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Ionicons } from '@expo/vector-icons';
@@ -18,7 +19,8 @@ const routeIcons = {
   "Plock": "list",
   "Inleveranser": "layers",
   "Logga in": "ios-person",
-  "Faktura": "ios-book"
+  "Faktura": "ios-book",
+  "Leverera": "ios-car"
 };
 
 
@@ -54,15 +56,18 @@ export default function App() {
             </Tab.Screen>
             <Tab.Screen name="Inleveranser">
               {() => <Deliveries setProducts={setProducts} /> }
-              </Tab.Screen>
-              {isLoggedIn ?
+            </Tab.Screen>
+            {isLoggedIn ?
                 <Tab.Screen name="Faktura">
                   {() => <Invoices setIsLoggedIn={setIsLoggedIn} />}
                 </Tab.Screen> :
                 <Tab.Screen name="Logga in">
                   {() => <Auth setIsLoggedIn={setIsLoggedIn} />}
                 </Tab.Screen>
-              }
+            }
+            <Tab.Screen name="Leverera"> 
+              {() => <Ship /> } 
+            </Tab.Screen>
         </Tab.Navigator>
       </NavigationContainer>
       <StatusBar style="auto" />
