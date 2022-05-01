@@ -7,7 +7,6 @@ import  OrderDropDown from './OrderDropDown';
 import DateOrderDropDown from './DateOrderDropDown';
 
 import Invoice from '../../interfaces/invoice';
-import Order from '../../interfaces/order';
 
 import invoiceModel from '../../models/invoices';
 import orderModel from '../../models/orders';
@@ -23,7 +22,6 @@ export default function InvoicesForm({ navigation }) {
         await invoiceModel.add(invoice);
         navigation.navigate("Invoices", { reload: true });
     }
-
     return (
         <ScrollView>
             <Text style={Typography.header2 }>Ny faktura</Text>
