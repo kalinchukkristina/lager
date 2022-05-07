@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing that the component does not behave unexpectedly, creating snapshop 1`] = `
+<View>
+  <Text
+    style={
+      Object {
+        "color": "#bbe0f0",
+        "fontSize": 20,
+        "marginTop": "3%",
+      }
+    }
+  >
+    Tulip
+     - 
+    60
+  </Text>
+  <Text
+    style={
+      Object {
+        "color": "#bbe0f0",
+        "fontSize": 20,
+        "marginTop": "3%",
+      }
+    }
+  >
+    Daisy
+     - 
+    202
+  </Text>
+  <Text
+    style={
+      Object {
+        "color": "#bbe0f0",
+        "fontSize": 20,
+        "marginTop": "3%",
+      }
+    }
+  >
+    Peony
+     - 
+    35
+  </Text>
+</View>
+`;

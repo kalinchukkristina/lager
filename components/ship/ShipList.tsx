@@ -22,8 +22,8 @@ export default function ShipList({ route, navigation }) {
     const listOfPackedOrders = allPackedOrders
     .filter(order => order.status === "Packad")
     .map((order, index) => {
-        console.log(order)
         return <Button
+            accessibilityLabel={`View delivery details`}
             title={order.name}
             key={index}
             onPress={() => {

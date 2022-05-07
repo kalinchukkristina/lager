@@ -42,6 +42,7 @@ export default function DeliveriesList({ route, navigation }) {
             { listOfDeliveries }
             <Button
                 title="Skapa ny inleverans"
+                accessibilityLabel={`Add new delivery`}
                 onPress={() => {
                     navigation.navigate('Form');
                 }}

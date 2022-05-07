@@ -9,7 +9,6 @@ export default function Ship() {
         <Stack.Navigator initialRouteName="List">
             <Stack.Screen name="List" component={ShipList}/>
             <Stack.Screen name="Order" component={ShipOrder}/>
-
         </Stack.Navigator>
     )
 }

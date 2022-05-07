@@ -28,12 +28,14 @@ export default function InvoicesForm({ navigation }) {
             <OrderDropDown
                 invoice={invoice}
                 setInvoice={setInvoice}
+                testID="invoice-order-id"
             />
 
             <Text style={{ ...Typography.label }}>Datum</Text>
             <DateOrderDropDown
                 invoice={invoice}
                 setInvoice={setInvoice}
+                testID="invoice-date"
             />
 
             <Button

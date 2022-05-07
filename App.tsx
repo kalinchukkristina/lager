@@ -1,19 +1,22 @@
+import React, { useState, useEffect } from 'react';
+import FlashMessage from "react-native-flash-message";
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { Ionicons } from '@expo/vector-icons';
+
 import Home from "./components/Home";
 import Pick from "./components/Pick";
 import Deliveries from "./components/Deliveries";
 import Auth from "./components/auth/Auth";
 import Invoices from "./components/invoice/Invoices";
 import Ship from './components/ship/Ship';
-import { NavigationContainer } from '@react-navigation/native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { Ionicons } from '@expo/vector-icons';
-import { Base, Typography } from './styles';
-import { useState, useEffect } from 'react';
+import { Base } from './styles';
 import authModel from './models/auth';
 
 const Tab = createBottomTabNavigator();
+
 const routeIcons = {
   "Lager": "home",
   "Plock": "list",
@@ -71,6 +74,7 @@ export default function App() {
         </Tab.Navigator>
       </NavigationContainer>
       <StatusBar style="auto" />
+      <FlashMessage position="top" />
     </SafeAreaView>
   );
 }

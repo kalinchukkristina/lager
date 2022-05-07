@@ -1,4 +1,4 @@
-import { Text, View, StyleSheet, FlatList } from "react-native";
+import { Text, View, StyleSheet } from "react-native";
 import { useState, useEffect } from 'react';
 import { Base, Typography } from "../../styles";
 import MapView from 'react-native-maps';

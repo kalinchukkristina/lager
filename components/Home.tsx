@@ -4,7 +4,7 @@ import warehouse from './../assets/warehouse.jpg';
 import Stock from './Stock';
 import { Base, Typography } from './../styles';
 
-export default function Home({route, products, setProducts}) {
+export default function Home({ products, setProducts}) {
   return (
     <ScrollView style={Base.container}>
       <Text style={Typography.header1}>Lager-Appen</Text>

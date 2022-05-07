@@ -9,17 +9,26 @@ import Product from '../interfaces/product';
 
 import deliveryModel from '../models/deliveries';
 import productModel from '../models/products';
+import { showMessage } from 'react-native-flash-message';
 
 
 export default function DeliveryForm({ navigation, setProducts }) {
     const [delivery, setDelivery] = useState<Partial<Delivery>>({});
     const [currentProduct, setCurrentProduct] = useState<Partial<Product>>({});
-    console.log(delivery);
 
     async function addDelivery() {
-        await deliveryModel.add(delivery);
-        setProducts(await productModel.getProducts());
-        navigation.navigate("List", { reload: true });
+        if (delivery.amount === 0 || delivery.comment === undefined) {
+            showMessage({
+                message: "Saknas",
+                description: "Either amount or comment field is empty.",
+                type: "warning",
+            });
+        } else {
+            await deliveryModel.add(delivery);
+            setProducts(await productModel.getProducts());
+            navigation.navigate("List", { reload: true });
+        }
+        
     }
 
     return (
@@ -31,6 +40,7 @@ export default function DeliveryForm({ navigation, setProducts }) {
                 delivery={delivery}
                 setDelivery={setDelivery}
                 setCurrentProduct={setCurrentProduct}
+                data-testid="product-dropdown"
             />
 
             <Text style={Typography.label }>Antal</Text>
@@ -49,12 +59,14 @@ export default function DeliveryForm({ navigation, setProducts }) {
 
                 value={delivery?.amount?.toString()}
                 keyboardType="numeric"
+                data-testid="antal"
             />
 
             <Text style={{ ...Typography.label }}>Datum</Text>
             <DateDropDown
                 delivery={delivery}
                 setDelivery={setDelivery}
+                data-testid="date-dropdown"
             />
 
             <Text style={Typography.label }>Kommentar</Text>
@@ -64,6 +76,7 @@ export default function DeliveryForm({ navigation, setProducts }) {
                     setDelivery({ ...delivery, comment: content })
                 }}
                 value={delivery?.comment}
+                data-testid="commentar"
             />
 
             <Button
@@ -71,6 +84,7 @@ export default function DeliveryForm({ navigation, setProducts }) {
                 onPress={() => {
                     addDelivery();
                 }}
+                data-testid="submitBtn"
             />
         </ScrollView>
     );
